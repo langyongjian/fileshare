@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum install git unzip;apt install git unzip; \n
+yum install git unzip -y;apt install git unzip -y
 mkdir -p /www/caddy && cd /www/caddy && wget "https://caddyserver.com/download/linux/386?plugins=http.filemanager&license=personal&telemetry=on" -O caddy.tar.gz && tar -zxvf caddy.tar.gz caddy && chmod +x caddy && rm -rf caddy.tar.gz
 wget -P /www/h5ai https://release.larsjung.de/h5ai/h5ai-0.29.0.zip && unzip /www/h5ai/h5ai-0.29.0.zip -d /www/h5ai
 chmod +777 /www/h5ai/_h5ai/public/cache/ /www/h5ai/_h5ai/private/cache/
@@ -29,3 +29,4 @@ echo ":80 {
  fastcgi / /home/hhvm/sock php
 }
 " > /www/caddy/Caddyfile
+useradd hhvm && mkdir -p /www/hhvm /home/hhvm/ && chmod +777 /www/hhvm /home/hhvm/
