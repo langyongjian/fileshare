@@ -1,9 +1,10 @@
 #!/bin/bash
 
+yum install git unzip;apt install git unzip; \n
 mkdir -p /www/caddy && cd /www/caddy && wget "https://caddyserver.com/download/linux/386?plugins=http.filemanager&license=personal&telemetry=on" -O caddy.tar.gz && tar -zxvf caddy.tar.gz caddy && chmod +x caddy && rm -rf caddy.tar.gz
 wget -P /www/h5ai https://release.larsjung.de/h5ai/h5ai-0.29.0.zip && unzip /www/h5ai/h5ai-0.29.0.zip -d /www/h5ai
 chmod +777 /www/h5ai/_h5ai/public/cache/ /www/h5ai/_h5ai/private/cache/
-yum install git;apt install git && git clone https://github.com/blueimp/jQuery-File-Upload.git "/www/jQuery-File-Upload"
+git clone https://github.com/blueimp/jQuery-File-Upload.git "/www/jQuery-File-Upload"
 chmod +777 /www/jQuery-File-Upload/server/php/files/
 echo ":80 {
 #basicauth / username password #网页密码验证,删除注释生效
