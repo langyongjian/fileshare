@@ -12,9 +12,6 @@ echo ":80 {
  root /www/h5ai
  timeouts none
  gzip
- filemanager /admin / {
-  database /www/caddy/filemanager.db
-  locale zh-cn }
  fastcgi / /home/hhvm/sock php
  rewrite {
         if {path} ends_with /
@@ -26,6 +23,9 @@ echo ":80 {
  root /www/jQuery-File-Upload/
  timeouts none
  gzip
+ filemanager /admin / {
+  database /www/caddy/filemanager.db
+  locale zh-cn }
  fastcgi / /home/hhvm/sock php
 }
 " > /www/caddy/Caddyfile
