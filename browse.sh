@@ -8,8 +8,8 @@ echo ":80 {
  timeouts none
  gzip
  browse
- filemanager /admin / {
-  database /www/caddy/filemanager.db
+ filebrowser /admin / {
+  database /www/caddy/filebrowser.db
   locale zh-cn }
 }
 " > /www/caddy/Caddyfile
